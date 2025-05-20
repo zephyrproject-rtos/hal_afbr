@@ -67,16 +67,13 @@ extern "C" {
 /*****************************************************************************/
 
 /*! Construct the version number for drivers. */
-#define MAKE_VERSION(major, minor, bugfix) \
+#define ARGUS_MAKE_VERSION(major, minor, bugfix) \
     (((major) << 24) | ((minor) << 16) | (bugfix))
 
     /*! Version number of the AFBR-S50 API. */
-#define ARGUS_API_VERSION MAKE_VERSION((ARGUS_API_VERSION_MAJOR), \
-                                       (ARGUS_API_VERSION_MINOR), \
-                                       (ARGUS_API_VERSION_BUGFIX))
-
-/*! Other modules may define this, now that it's used, undefine it */
-#undef MAKE_VERSION
+#define ARGUS_API_VERSION ARGUS_MAKE_VERSION((ARGUS_API_VERSION_MAJOR), \
+                                             (ARGUS_API_VERSION_MINOR), \
+                                             (ARGUS_API_VERSION_BUGFIX))
 
 /*! @} */
 #ifdef __cplusplus
